@@ -1,0 +1,62 @@
+micronaut:
+  application:
+    name: gitsage
+  server:
+    port: 8080
+    cors:
+      enabled: true
+
+gitsage:
+  github:
+    token: ${GITHUB_TOKEN}
+    org: ${GITHUB_ORG}
+    index-readmes: true
+    index-source-code: true
+    index-issues: true
+    index-pull-requests: false
+  llm:
+    provider: openai
+    api-key: ${OPENAI_API_KEY}
+    model: gpt-4o
+    embedding-model: text-embedding-3-small
+    embedding-dimensions: 1536
+  indexing:
+    cron: "0 0 */6 * * ?"
+    batch-size: 50
+    incremental-only: true
+  rag:
+    max-results: 10
+    similarity-threshold: 0.7
+    chunk-size: 1000
+    chunk-overlap: 200
+    system-prompt: >
+      You are GitSage, an AI assistant with deep knowledge of a GitHub organisation's
+      codebase. You answer questions about code, architecture, and development practices
+      based on the indexed repositories. Always cite the specific repository and file
+      when referencing code. If you don't know the answer, say so honestly.
+
+datasources:
+  default:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:gitsage}
+    username: ${POSTGRES_USER:gitsage}
+    password: ${POSTGRES_PASSWORD:gitsage}
+    driver-class-name: org.postgresql.Driver
+
+flyway:
+  datasources:
+    default:
+      enabled: true
+      locations: classpath:db/migration
+
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
+  info:
+    enabled: true
+    sensitive: false
+
+logger:
+  levels:
+    dev.gitsage: INFO
+    io.micronaut: INFO

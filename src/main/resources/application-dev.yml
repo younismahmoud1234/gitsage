@@ -1,0 +1,18 @@
+micronaut:
+  server:
+    port: 8080
+
+gitsage:
+  github:
+    token: ${GITHUB_TOKEN:ghp_your_token_here}
+    org: ${GITHUB_ORG:your-org}
+  llm:
+    api-key: ${OPENAI_API_KEY:sk-your-key-here}
+  indexing:
+    cron: "0 */5 * * * ?"
+    incremental-only: false
+
+logger:
+  levels:
+    dev.gitsage: DEBUG
+    io.micronaut.http.client: DEBUG

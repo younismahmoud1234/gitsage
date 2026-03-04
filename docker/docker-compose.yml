@@ -1,0 +1,51 @@
+services:
+  gitsage:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: gitsage
+    ports:
+      - "8080:8080"
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - GITHUB_ORG=${GITHUB_ORG}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=gitsage
+      - POSTGRES_USER=gitsage
+      - POSTGRES_PASSWORD=gitsage
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - gitsage-network
+
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: gitsage-postgres
+    environment:
+      - POSTGRES_DB=gitsage
+      - POSTGRES_USER=gitsage
+      - POSTGRES_PASSWORD=gitsage
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gitsage -d gitsage"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - gitsage-network
+
+volumes:
+  pgdata:
+    driver: local
+
+networks:
+  gitsage-network:
+    driver: bridge
