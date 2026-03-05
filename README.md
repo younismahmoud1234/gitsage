@@ -6,7 +6,7 @@
 
 **Index your entire GitHub org → Ask questions about your code → Get AI-powered answers with source citations**
 
-[![CI](https://github.com/rameshreddy-adutla/gitsage/actions/workflows/ci.yml/badge.svg)](https://github.com/rameshreddy-adutla/gitsage/actions/workflows/ci.yml)
+[![CI](https://github.com/open-ai-school/gitsage/actions/workflows/ci.yml/badge.svg)](https://github.com/open-ai-school/gitsage/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Java 21](https://img.shields.io/badge/Java-21-orange.svg)](https://openjdk.org/projects/jdk/21/)
 [![Micronaut 4](https://img.shields.io/badge/Micronaut-4.7-blue.svg)](https://micronaut.io/)
@@ -111,7 +111,7 @@ graph LR
 ### 1. Clone and configure
 
 ```bash
-git clone https://github.com/rameshreddy-adutla/gitsage.git
+git clone https://github.com/open-ai-school/gitsage.git
 cd gitsage
 
 # Create your environment file
